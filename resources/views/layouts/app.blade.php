@@ -10,13 +10,7 @@
 </head>
 <body>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{{ route('homepage') }}">Homepage</a></li>
-            </ul>
-        </nav>
-    </header>
+    @include('partials.header')
 
     <main>
         @yield('main_content')
