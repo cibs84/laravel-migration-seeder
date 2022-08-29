@@ -7,9 +7,9 @@ use App\Trip;
 
 class TripsController extends Controller
 {
-    function trips($place = 'I\'m a place var') {
-        $trips = Trip::all();
-        dd($trips);
-        return view('trips', $trips);
+    function trips($place) {
+        $trips = Trip::where('category_place', $place)->get();
+        // dd($trips);
+        return view('trips', ['trips' => $trips, 'place' => $place]);
     }
 }
